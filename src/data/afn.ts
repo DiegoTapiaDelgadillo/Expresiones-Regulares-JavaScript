@@ -99,7 +99,7 @@ export const EXAMPLES_AFDS = [
         repeatChars: null,
         nextStateChars: null,
         jumpChars: "0,1",
-        jumpState: "1,0",
+        jumpState: "2,1",
       },
     ],
   },

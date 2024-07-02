@@ -17,15 +17,21 @@ const MENUOPTIONS = [
     path: "/practicando-expresiones-regulares-javaScript",
     name: "Practicando Expresiones Regulares en JavaScript",
   },
+  {
+    path: "/afd",
+    name: "Automata Finito Determinista / Expresiones Regulares",
+  },
 ];
 
+const Home = lazy(() => import("./pages/home"));
+const NotFound = lazy(() => import("./pages/notFound"));
+const UsandoREJ = lazy(() =>
+  import("./pages/usandoExpresionesRegularesJavaScript")
+);
+const Practicando = lazy(() => import("./pages/practicando"));
+const Afd = lazy(() => import("./pages/afd"));
+
 export default function App() {
-  const Home = lazy(() => import("./pages/home"));
-  const NotFound = lazy(() => import("./pages/notFound"));
-  const UsandoREJ = lazy(() =>
-    import("./pages/ usandoExpresionesRegularesJavaScript")
-  );
-  const Practicando = lazy(() => import("./pages/practicando"));
   return (
     <HashRouter>
       <Navbar menuOptions={MENUOPTIONS} />
@@ -41,6 +47,7 @@ export default function App() {
             element={<Practicando />}
           />
           <Route path="*" element={<NotFound />} />
+          <Route path="/afd" element={<Afd />} />
         </Routes>
       </Suspense>
       <Footer />

@@ -4,6 +4,7 @@ import SubTitle from "../../components/textStyle/subTitle";
 import TestForm from "../../components/testForm";
 import RegularExpressionText from "../../components/regularExpressionsText";
 import useScrollTop from "../../hooks/useScrollTop";
+import { REGEX_SYMBOLS } from "../../data/regex";
 
 export default function Home() {
   useScrollTop();
@@ -28,50 +29,12 @@ export default function Home() {
       </div>
       <div className=" pt-8">
         <ul className=" list-disc text-base">
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">.</code> - Matches
-            any single character except newline
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">\d</code> - Matches
-            any digit character (0-9)
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">\w</code> - Matches
-            any word character (a-z, A-Z, 0-9, _)
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">\s</code> - Matches
-            any whitespace character (space, tab, newline, etc.)
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">^</code> - Matches
-            the start of a string
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">$</code> - Matches
-            the end of a string
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">*</code> - Matches
-            zero or more occurrences of the preceding character or group
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">+</code> - Matches
-            one or more occurrences of the preceding character or group
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">?</code> - Matches
-            zero or one occurrence of the preceding character or group
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">[ ]</code> - Matches
-            any character within the brackets
-          </li>
-          <li className=" text-neutral-500">
-            <code className=" font-bold text-xl text-black">( )</code> - Groups
-            multiple characters together
-          </li>
+          {REGEX_SYMBOLS.map(({ symbol, description }) => (
+            <li className="text-neutral-500" key={symbol.symbol}>
+              <code className="font-bold text-xl text-black">{symbol}</code> -{" "}
+              {description}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pt-8">

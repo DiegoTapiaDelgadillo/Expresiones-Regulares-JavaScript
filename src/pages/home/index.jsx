@@ -27,8 +27,8 @@ export default function Home() {
           búsqueda. Algunos metacaracteres comunes y sus significados incluyen:
         </BodyText>
       </div>
-      <div className=" pt-8">
-        <ul className=" list-disc text-base">
+      <div className="pt-8">
+        <ul className="list-disc text-base">
           {REGEX_SYMBOLS.map(({ symbol, description }) => (
             <li className="text-neutral-500" key={symbol.symbol}>
               <code className="font-bold text-xl text-black">{symbol}</code> -{" "}

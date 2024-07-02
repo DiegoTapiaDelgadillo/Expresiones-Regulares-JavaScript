@@ -2,6 +2,7 @@ import BodyText from "../../components/textStyle/bodyText";
 import Title from "../../components/textStyle/title";
 import SubTitle from "../../components/textStyle/subTitle";
 import Automata from "../../components/Automata";
+import { EXAMPLES_AFDS } from "../../data/afn";
 
 export default function Afd() {
   return (
@@ -18,8 +19,11 @@ export default function Afd() {
         permiten al autómata cambiar de estado sin consumir ningún símbolo de la
         entrada.
       </BodyText>
-      <div className="my-8">
-        <Automata />
+      <div className="my-8 flex flex-col gap-4">
+        <SubTitle>Ejemplos de AFD</SubTitle>
+        {EXAMPLES_AFDS.map((afd, idx) => (
+          <Automata key={`afd-${idx}`} {...afd} />
+        ))}
       </div>
       <div className="flex flex-col gap-4 pt-8">
         <SubTitle>Funcionamiento</SubTitle>
